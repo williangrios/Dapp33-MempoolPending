@@ -94,7 +94,25 @@ function App() {
       <ToastContainer position="top-center" autoClose={5000}/>
       <WRHeader title="MEMPOOL PENDING (GOERLI)" image={true} />
       <WRContent>
-        <p>{`${transactions.hash} - ${transactions.to} - ${transactions.from} - ${transactions.data}`}</p>
+        <table style={{width: '80%', margin: 'auto', border: 'solid 1px #222'}}>
+          <thead>
+            <tr>
+              <td style={{width: '25%', textAlign: 'center'}}>Hash</td>
+              <td style={{width: '25%', textAlign: 'center'}}>To</td>
+              <td style={{width: '25%', textAlign: 'center'}}>From</td>
+              <td style={{width: '25%', textAlign: 'center'}}>Data</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{transactions.hash}</td>
+              <td>{transactions.to}</td>
+              <td>{transactions.from}</td>
+              <td>{transactions.data}</td>
+            </tr>
+          </tbody>
+        </table>
+        
       </WRContent>
       <WRTools react={true} hardhat={true} bootstrap={true} solidity={true} css={true} javascript={true} ethersjs={true} />
       <WRFooter /> 
